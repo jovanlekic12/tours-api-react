@@ -1,0 +1,86 @@
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.container h1 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+.image__container {
+  position: relative;
+  width: fit-content;
+}
+
+.image {
+  height: 20rem;
+  width: 30rem;
+  object-fit: cover;
+}
+
+.price {
+  background-color: #10b981;
+  padding: 5px 10px;
+  width: fit-content;
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.tours__list {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 2000px;
+  gap: 50px;
+  margin: 0 auto;
+}
+
+.list__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 30rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.info__container {
+  padding: 2rem;
+}
+
+.tour__name {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.tour__info {
+  font-size: 1.5rem;
+  color: #898989;
+}
+
+.not__interested__btn {
+  font-size: 1.5rem;
+  padding: 7px 0;
+  margin: 1rem 0;
+  width: 100%;
+  border: 1px solid #10b981;
+  color: #10b981;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.not__interested__btn:hover {
+  background-color: #10b981;
+  color: #fff;
+  transition: all 0.3s;
+}
