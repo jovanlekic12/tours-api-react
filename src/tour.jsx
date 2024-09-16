@@ -10,7 +10,10 @@ function Tour(props) {
       </div>
       <div className="info__container">
         <h3 className="tour__name">{name}</h3>
-        <p className="tour__info">{info}</p>
+        <p className="tour__info">
+          {info.substring(1, 250)}
+          <button className="read__more__btn">Read more...</button>
+        </p>
         <button
           className="not__interested__btn"
           onClick={() => handleDeleteTour(id)}

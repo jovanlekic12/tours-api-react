@@ -40,9 +40,8 @@
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  justify-content: space-around;
-  max-width: 2000px;
-  gap: 50px;
+  justify-content: space-between;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -66,6 +65,7 @@
 .tour__info {
   font-size: 1.5rem;
   color: #898989;
+  text-align: left;
 }
 
 .not__interested__btn {
@@ -83,4 +83,15 @@
   background-color: #10b981;
   color: #fff;
   transition: all 0.3s;
+}
+
+.read__more__btn {
+  color: #10b981;
+  font-size: 1.5rem;
+  border: 0;
+  cursor: pointer;
+}
+
+.read__more__btn:hover {
+  text-decoration: underline;
 }
