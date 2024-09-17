@@ -12,7 +12,19 @@ function App() {
   function handleDeleteTour(id) {
     setTours((arr) => arr.filter((tour) => tour.id !== id));
   }
+  function limitWords(str, numWords) {
+    // Split the string into an array of words
+    const wordsArray = str.split(" ");
 
+    // Slice the array to get the first `numWords` words
+    const limitedWordsArray = wordsArray.slice(0, numWords);
+
+    // Join the words back into a string
+    return limitedWordsArray.join(" ");
+  }
+  function expandString(string) {
+    return string;
+  }
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -35,7 +47,12 @@ function App() {
       <ul className="tours__list">
         {tours.map((tour) => {
           return (
-            <Tour key={tour.id} {...tour} handleDeleteTour={handleDeleteTour} />
+            <Tour
+              key={tour.id}
+              {...tour}
+              handleDeleteTour={handleDeleteTour}
+              limitWords={limitWords}
+            />
           );
         })}
       </ul>

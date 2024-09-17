@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Tour(props) {
-  const { id, name, info, image, price, handleDeleteTour } = props;
+  const {
+    id,
+    name,
+    info,
+    image,
+    price,
+    handleDeleteTour,
+    limitWords,
+    expandString,
+  } = props;
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
     <li className="list__item">
       <div className="image__container">
@@ -11,8 +21,13 @@ function Tour(props) {
       <div className="info__container">
         <h3 className="tour__name">{name}</h3>
         <p className="tour__info">
-          {info.substring(1, 250)}
-          <button className="read__more__btn">Read more...</button>
+          {isExpanded ? info : limitWords(info, 35)}{" "}
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="read__more__btn"
+          >
+            read more...
+          </button>
         </p>
         <button
           className="not__interested__btn"
