@@ -45,16 +45,20 @@ function App() {
       <h1>Our Tours</h1>
       {/* {error && <p>Error: {error.message}</p>} */}
       <ul className="tours__list">
-        {tours.map((tour) => {
-          return (
-            <Tour
-              key={tour.id}
-              {...tour}
-              handleDeleteTour={handleDeleteTour}
-              limitWords={limitWords}
-            />
-          );
-        })}
+        {tours.length == 0 ? (
+          <button className="refresh__btn">Refresh</button>
+        ) : (
+          tours.map((tour) => {
+            return (
+              <Tour
+                key={tour.id}
+                {...tour}
+                handleDeleteTour={handleDeleteTour}
+                limitWords={limitWords}
+              />
+            );
+          })
+        )}
       </ul>
     </div>
   );
