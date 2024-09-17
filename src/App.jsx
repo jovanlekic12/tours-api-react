@@ -25,16 +25,19 @@ function App() {
   function expandString(string) {
     return string;
   }
+  const fetchData = async () => {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setTours(data);
+    } catch (error) {
+      setError(error);
+    }
+  };
+  function handleRefresh() {
+    fetchData();
+  }
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        setTours(data);
-      } catch (error) {
-        setError(error);
-      }
-    };
     fetchData();
   }, []);
 
@@ -46,7 +49,9 @@ function App() {
       {/* {error && <p>Error: {error.message}</p>} */}
       <ul className="tours__list">
         {tours.length == 0 ? (
-          <button className="refresh__btn">Refresh</button>
+          <button onClick={handleRefresh} className="refresh__btn">
+            Refresh
+          </button>
         ) : (
           tours.map((tour) => {
             return (
